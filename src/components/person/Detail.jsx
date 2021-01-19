@@ -52,26 +52,39 @@ const PersonDetail = ({ match }) => {
                         Back
                     </Button>
                 </Grid>
-                <Grid item md={6} sm={12} xs={12} className={classes.responsiveCenter}>
-                    <Typography variant="h6" gutterBottom style={{ textTransform: 'uppercase' }}>
-                        {person.name}
-                    </Typography>
-                    <Card className={classes.card}>
-                        <CardMedia 
-                            component="img"
-                            image={person.profile}
-                            title={person.name}
-                        />
-                    </Card>
-                </Grid>
-                <Grid item md={6} sm={12} xs={12} style={{ marginTop: 12 }}>
-                    <Typography gutterBottom>
-                        <strong>AGE: {moment().diff(person.birthday, 'years')} YEARS OLD</strong>
-                    </Typography>
-                    <Typography align="justify" style={{ marginBottom: 24 }}>
-                        {person.biography}
-                    </Typography>
-                </Grid>
+                {person.profile && person.biography ? (
+                    <>
+                        <Grid item md={6} sm={12} xs={12} className={classes.responsiveCenter}>
+                            <Typography variant="h6" gutterBottom style={{ textTransform: 'uppercase' }}>
+                                {person.name}
+                            </Typography>
+                            <Card className={classes.card}>
+                                <CardMedia 
+                                    component="img"
+                                    image={person.profile}
+                                    title={person.name}
+                                />
+                            </Card>
+                        </Grid>
+                        <Grid item md={6} sm={12} xs={12} style={{ marginTop: 12 }}>
+                            <Typography gutterBottom>
+                                <strong>AGE: {moment().diff(person.birthday, 'years')} YEARS OLD</strong>
+                            </Typography>
+                            <Typography align="justify" style={{ marginBottom: 24 }}>
+                                {person.biography}
+                            </Typography>
+                        </Grid>
+                    </>
+                ) : (
+                    <Grid item md={12} sm={12} xs={12} className={classes.responsiveCenter}>
+                        <Typography variant="h6" gutterBottom style={{ textTransform: 'uppercase' }}>
+                            {person.name}
+                        </Typography>
+                        <Typography variant="overline">
+                            Description not available.
+                        </Typography>
+                    </Grid>
+                )}
             </Grid>
         </Container>
     );

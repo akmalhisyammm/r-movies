@@ -5,7 +5,7 @@ import { AppBar, Toolbar, Container, Typography, IconButton } from '@material-ui
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
         paddingTop: 8,
@@ -15,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
     container: {
         paddingLeft: 0,
         paddingRight: 0
-    },
-    menuButton: {
-        marginRight: theme.spacing(1)
     },
     title: {
         flexGrow: 1,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Card, CardMedia, Typography } from '@material-ui/core';
+import { Grid, Avatar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
@@ -11,16 +11,10 @@ const useStyles = makeStyles(() => ({
         textDecoration: 'none',
         color: 'inherit'
     },
-    card: {
-        position: 'relative',
-        borderRadius: '50%',
+    avatar: {
         width: 75,
         height: 75,
         marginRight: 18
-    },
-    profile: {
-        display: 'block',
-        height: 75
     }
 }));
 
@@ -29,14 +23,7 @@ const Modals = ({ item }) => {
 
     return (
         <Grid item sm={12} xs={12} className={classes.cardWrapper} component={Link} to={`/person/${item.id}`}>
-            <Card className={classes.card}>
-                <CardMedia
-                    component="img"
-                    image={item.profile}
-                    title={item.name}
-                    className={classes.profile}
-                />
-            </Card>
+            <Avatar alt={item.name} src={item.profile} className={classes.avatar} />
             <Typography>
                 {item.name}
             </Typography>
