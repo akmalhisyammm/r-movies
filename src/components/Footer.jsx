@@ -35,7 +35,7 @@ const Footer = () => {
             <Grid container alignItems="center">
                 <Grid item sm={12} xs={12} className={classes.footer}>
                     <Typography variant="body2" className={classes.devCopy}>
-                        &copy; 2020 &bull; Muhammad Akmal Hisyam
+                        &copy; 2021 &bull; Muhammad Akmal Hisyam
                     </Typography>
                     <div className={classes.powered}>
                         <Typography variant="caption" gutterBottom>
