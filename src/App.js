@@ -12,7 +12,7 @@ import MovieDetail from './components/movie/Detail';
 import PersonDetail from './components/person/Detail';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const theme = createMuiTheme({
     palette: {
